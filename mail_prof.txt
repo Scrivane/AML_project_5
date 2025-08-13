@@ -1,0 +1,14 @@
+Buonasera Professore, 
+il mio gruppo (composto da Adriano De Cesare , Mattia Cappellino e Alessia Bevilaqua) sta facendo il progetto 5 track B di Advanced Machine Learning.
+Pensiamo di aver completato la parte riguardante all' Experimentation , in allegato è presente un file con i risultati trovati . 
+
+Vorremmo sapere se i risultati sono corretti e, in tal caso, se possiamo procedere con la fase di Personal Contribution.
+Riguardo alla personal contribution pensavamo di focalizzarci su Client selection, per esempio modificando fedavg per dare un peso diverso ai vari client , maggiore a quelli più omogenei e minore a quelli meno.
+Che ne pensa? 
+
+Ci piacerebbe sapere se questa idea può costituire un contributo valido o se ha suggerimenti alternativi su cui potremmo orientarci.
+
+Restiamo in attesa di un suo riscontro.
+
+Cordiali Saluti ,
+Adriano De Cesare
