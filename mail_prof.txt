@@ -2,9 +2,11 @@ Buonasera Professore,
 il mio gruppo (composto da Adriano De Cesare , Mattia Cappellino e Alessia Bevilaqua) sta facendo il progetto 5 track B di Advanced Machine Learning.
 Pensiamo di aver completato la parte riguardante all' Experimentation , in allegato è presente un file con i risultati trovati . 
 
-Vorremmo sapere se i risultati sono corretti e, in tal caso, se possiamo procedere con la fase di Personal Contribution.
+Vorremmo sapere se i risultati sono quelli che ci dovremmo aspettare e, in tal caso, se possiamo procedere con la fase di Personal Contribution.
 
 Riguardo alla personal contribution avevamo pensato di concentrarci su Client selection, ad esempio modificando fedavg per dare un peso diverso ai vari client , maggiore a quelli più omogenei e minore a quelli meno.
+
+Ci piacerebbe lavorare sulla selezione dei client in base ai dati che essi hanno seguendo le specifiche del federated learning, quindi mantenendo i dati nei client, ma lasciando loro stessi ad autovalutarsi (utilizzando metriche come la diverrsita dei dati posseduti da ognuno per assegnare pesi diversi ai client, o sperimentare con l'esclusione di una parte dei dati ad opera dei client stessi)
 
 Ci piacerebbe sapere se questa idea può costituire un contributo valido o se ha suggerimenti alternativi su cui potremmo orientarci.
 
