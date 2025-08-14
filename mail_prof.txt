@@ -7,6 +7,9 @@ Vorremmo sapere se i risultati sono quelli che ci dovremmo aspettare e, in tal c
 Riguardo alla personal contribution avevamo pensato di concentrarci su Client selection, ad esempio modificando fedavg per dare un peso diverso ai vari client , maggiore a quelli più omogenei e minore a quelli meno.
 
 Ci piacerebbe lavorare sulla selezione dei client in base ai dati che essi hanno seguendo le specifiche del federated learning, quindi mantenendo i dati nei client, ma lasciando loro stessi ad autovalutarsi (utilizzando metriche come la diverrsita dei dati posseduti da ognuno per assegnare pesi diversi ai client, o sperimentare con l'esclusione di una parte dei dati ad opera dei client stessi)
+Sarebbe interessante lavorare sugli outlier, vedendo se la loro riduzione o rimozione in alcuni (o tutti) i client possa portare a un miglioramento nel modello (perche magari sono visti come noise) o ad un peggioramento nelle performances. Spereremmo inoltre di vedere un tempo di convergenza minore in questo caso.
+Anche l'ordine con cui i client vengono visitati dal modello potrebbe influenzare sul tempo di convergenza e probabilmente meno sull accuracy finale (secondo me).
+
 
 Ci piacerebbe sapere se questa idea può costituire un contributo valido o se ha suggerimenti alternativi su cui potremmo orientarci.
 
