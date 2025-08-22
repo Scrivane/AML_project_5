@@ -25,3 +25,10 @@ variare il local step per client in base all utilita riportata da client a clien
 
 
 
+
+
+
+CIFAR 100 baseline
+
+testare altri shceduler
+OneCycleLR e StepLR (Multi-Step)
