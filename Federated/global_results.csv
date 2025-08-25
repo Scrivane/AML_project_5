@@ -1,0 +1,2 @@
+timestamp,model_name,parameters,train_max_acc,train_round,train_loss,val_max_acc,val_round,val_loss,test_max_acc,test_round,test_loss
+2025-08-24 22:51:54,test_sampled_uniform_5_J_8,{},-1.0,1,-1.0,0.362,956,2.8033,0.3875,910,2.6447
