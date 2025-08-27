@@ -1,0 +1,8 @@
+timestamp,model_name,parameters,train_max_acc,train_round,train_loss,val_max_acc,val_round,val_loss,test_max_acc,test_round,test_loss
+2025-08-27 00:08:38,cifar_scheduler_CosineAnnealingLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.7082,100,0.9935,0.491,98,2.2758,0.5114,99,2.2451
+2025-08-27 00:17:07,cifar2_scheduler_CosineAnnealingLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.6993,98,1.0335,0.4774,98,2.297,0.5017,98,2.254
+2025-08-27 00:22:51,cifar2_scheduler_StepLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.5454,98,1.6252,0.4272,96,2.3395,0.4529,99,2.2568
+2025-08-27 00:28:35,cifar2_scheduler_ExponentialLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.7661,100,0.7766,0.4912,92,2.4305,0.5178,99,2.4258
+2025-08-27 00:34:19,cifar2_scheduler_ReduceLROnPlateau,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.5264,100,1.7185,0.4188,99,2.3753,0.4521,100,2.2651
+2025-08-27 01:14:11,cifar2_scheduler_OneCycleLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.7172,100,0.9629,0.503,95,2.1752,0.5328,99,2.1291
+2025-08-27 01:21:10,cifar2_scheduler_CosineAnnealingWarmRestarts,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.5719,69,1.533,0.45,70,2.2808,0.4799,70,2.146
