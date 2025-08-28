@@ -6,3 +6,9 @@ timestamp,model_name,parameters,train_max_acc,train_round,train_loss,val_max_acc
 2025-08-27 00:34:19,cifar2_scheduler_ReduceLROnPlateau,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.5264,100,1.7185,0.4188,99,2.3753,0.4521,100,2.2651
 2025-08-27 01:14:11,cifar2_scheduler_OneCycleLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.7172,100,0.9629,0.503,95,2.1752,0.5328,99,2.1291
 2025-08-27 01:21:10,cifar2_scheduler_CosineAnnealingWarmRestarts,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 100}",0.5719,69,1.533,0.45,70,2.2808,0.4799,70,2.146
+2025-08-27 23:08:35,cifar_more_step_scheduler_OneCycleLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 500}",0.9223,499,0.2557,0.5486,494,2.7793,0.5646,492,2.8767
+2025-08-27 23:37:16,cifar_more_step_scheduler_CosineAnnealingWarmRestarts,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 500}",0.8378,348,0.5368,0.5206,338,2.4845,0.5467,346,2.4778
+2025-08-28 00:05:58,cifar_more_step_scheduler_CosineAnnealingLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 500}",0.9391,490,0.2005,0.5306,487,3.0424,0.5509,477,3.1659
+2025-08-28 00:34:43,cifar_more_step_scheduler_StepLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 500}",0.8987,500,0.3314,0.5098,347,2.7364,0.5316,353,2.8223
+2025-08-28 01:03:27,cifar_more_step_scheduler_ExponentialLR,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 500}",0.9782,498,0.0796,0.5226,446,3.6569,0.5434,460,3.9423
+2025-08-28 01:32:12,cifar_more_step_scheduler_ReduceLROnPlateau,"{""lr"": 0.1, ""weight_decay"": 0.0001, ""batch_size"": 128, ""epochs"": 500}",0.7919,259,0.6938,0.5122,292,2.4031,0.5307,194,2.3922
