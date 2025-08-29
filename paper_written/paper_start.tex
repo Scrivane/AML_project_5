@@ -66,9 +66,11 @@ First line of institution2 address\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-   Federated Learning has gained significant attention in recent years due to the widespread use of mobile devices.
-  In a machine learning context, it requires shifting model training from a central server to end devices which help to minimize communication overhead and privacy risks. To address these challenges, we analyzed a centralized baseline, a federated one, the impact of client participation, and the effects of heterogeneous data distributions and further expanded in the
-  TODO: personal contributions .
+  Federated Learning (FL) has emerged as a paradigm for training machine learning models across distributed clients without sharing raw data. 
+  Despite its promise, FL faces challenges due to statistical heterogeneity (non-IID client data) and system heterogeneity (variable resources and participation). 
+  This paper presents a systematic study of these challenges through experiments on CIFAR-100 and Shakespeare datasets, implementing centralized and federated baselines with varying degrees of heterogeneity. 
+  We analyze the impact of client participation patterns and non-IID data distributions on FedAvg performance. 
+  Finally, inspired by prior work on client selection, we propose diversity-aware selection strategies based on label distribution entropy, inter-client distance, and local loss values, showing improved convergence under heterogeneous conditions.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
