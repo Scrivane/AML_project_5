@@ -32,3 +32,14 @@ CIFAR 100 baseline
 
 testare altri shceduler
 OneCycleLR e StepLR (Multi-Step)
+
+
+
+
+nuove cose da fare 
+
+
+1 pulire codice  e github
+2 fare readme containing the instructions to run your code to reproduce specific parts of your experimentation
+3 fare abstract 
+4 
