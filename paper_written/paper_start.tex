@@ -83,11 +83,19 @@ Federated learning is a machine learning approach where many clients collaborati
 However, federated learning also introduces new challenges. As the number of participating devices grows, communication between the clients and the server can become a significant bottleneck. Another challenge is that client data, such as that collected from mobile phones, is often non-IID (not independent and identically distributed) and unbalanced, since it depends on how each user interacts with their device.
 %-------------------------------------------------------------------------
 
-\subsection{Dual submission}
+\subsection{Baselines and personal contributions}
 
-Please refer to the author guidelines on the \confName\ \confYear\ web page for a
-discussion of the policy on dual submissions.
+We began by analyzing a centralized baseline to evaluate the performance of the chosen model and to compare it with the federated setting. We also examined different schedulers to determine which yielded faster and more reliable results.
+We set up a federated baseline and used it to study the impact of client participation (uniform vs. skewed) as well as the effects of heterogeneous data distributions.
+Our personal contributions focus on client selection policies that better account for variability in both client usefulness (their impact on training) and data diversity.
 
+The first contribution studies minibatch probing as a mechanism to estimate the near-term impact of candidate clients. Probing identifies clients that are likely to produce large, informative updates, thereby accelerating convergence. However, a purely probe-driven top-k selection tends to starve “weak” clients. To counter this, we introduce a probe + fairness hybrid, blending probe utility with fairness-aware scheduling that tracks participation frequency and recency. This ensures that all clients (also those with limited or skewed data) remain represented in training, balancing short-term efficiency with long-term equity.
+The second contribution introduces Weighted Diversity Sampling to limit redundant updates from clients with similar data. We define a diversity score that combines intra-client diversity (label coverage and distribution balance) with inter-client diversity (dissimilarity to other clients). This score favors clients whose participation provides novel information while reducing redundancy.
+
+
+
+\section{Placeholder}
+\label{sec:formatting} 
 \subsection{Paper length}
 Papers, excluding the references section, must be no longer than eight pages in length.
 The references section will not be included in the page count, and there is no limit on the length of the references section.
