@@ -1,4 +1,0 @@
-timestamp,model_name,parameters,train_max_acc,train_round,train_loss,val_max_acc,val_round,val_loss,test_max_acc,test_round,test_loss
-2025-08-25 03:30:59,test_sampled_uniform_50_J_4,"{""lr"": 0.01, ""weight_decay"": 0.0001, ""batch_size"": 128, ""K"": 100, ""C"": 0.1, ""J"": 4, ""ROUNDS"": 2000}",-1.0,1,-1.0,0.4442,1912,3.7807,0.4534,1963,3.9832
-2025-08-25 06:58:22,test_sampled_uniform_50_J_8,"{""lr"": 0.01, ""weight_decay"": 0.0001, ""batch_size"": 128, ""K"": 100, ""C"": 0.1, ""J"": 8, ""ROUNDS"": 1000}",-1.0,1,-1.0,0.3874,922,4.0514,0.4038,996,4.3686
-2025-08-25 10:13:25,test_sampled_uniform_50_J_16,"{""lr"": 0.01, ""weight_decay"": 0.0001, ""batch_size"": 128, ""K"": 100, ""C"": 0.1, ""J"": 16, ""ROUNDS"": 500}",-1.0,1,-1.0,0.3284,427,4.3034,0.3418,482,4.359
