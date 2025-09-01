@@ -85,12 +85,16 @@ However, federated learning also introduces new challenges. As the number of par
 
 \subsection{Baselines and personal contributions}
 
+[In this paper we analyze the standard FL scenarios, comparing a centralized baseline with a federated one. 
+We also study the impact of client participation (uniform vs. skewed) as well as the effects of heterogeneous data distributions on the federated baseline.
+Since we noticed that these two aspects are critical for effective federated learning, we then propose two client selection strategies that can mitigate these challenges.] 
+
 We began by analyzing a centralized baseline to evaluate the performance of the chosen model and to compare it with the federated setting. We also examined different schedulers to determine which yielded faster and more reliable results.
 We set up a federated baseline and used it to study the impact of client participation (uniform vs. skewed) as well as the effects of heterogeneous data distributions.
 Our personal contributions focus on client selection policies that better account for variability in both client usefulness (their impact on training) and data diversity.
 
 The first contribution studies minibatch probing as a mechanism to estimate the near-term impact of candidate clients. Probing identifies clients that are likely to produce large, informative updates, thereby accelerating convergence. However, a purely probe-driven top-k selection tends to starve “weak” clients. To counter this, we introduce a probe + fairness hybrid, blending probe utility with fairness-aware scheduling that tracks participation frequency and recency. This ensures that all clients (also those with limited or skewed data) remain represented in training, balancing short-term efficiency with long-term equity.
-The second contribution introduces Weighted Diversity Sampling to limit redundant updates from clients with similar data. We define a diversity score that combines intra-client diversity (label coverage and distribution balance) with inter-client diversity (dissimilarity to other clients). This score favors clients whose participation provides novel information while reducing redundancy.
+The second contribution introduces a Diversity Score Sampling to limit redundant updates from clients with similar data. We define a diversity score that combines intra-client diversity (label coverage and distribution balance) with inter-client diversity (dissimilarity to other clients). This score favors clients whose participation provides novel information while reducing redundancy.
 
 
 
