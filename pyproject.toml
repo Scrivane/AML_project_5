@@ -18,6 +18,7 @@ scipy = "^1.15.2"
 torchaudio = "^2.6.0"
 tensorboard = "^2.20.0"
 pandas = "^2.3.1"
+datasets = "^4.0.0"
 
 
 [build-system]
