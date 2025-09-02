@@ -109,9 +109,10 @@ In CIFAR-100 examples are already split between train(50000 samples) and test(10
 In Shakespeare, we split using 90\% of the samples for training, 5\% for validation, and 5\% for testing.  
 
 \subsection{FedAvg}
-For federated learning we used FedAvg \cite{Paper03} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients. Each client trains the model on its local data for a few steps and sends the updated model back to the server.
+For federated learning we used FedAvg \cite{Paper03} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients (in case 10\% of them ). Each client trains the model on its local data for a few steps and sends the updated model back to the server.
 The server then aggregates the updates by averaging to form a new global model, which is sent back to the clients for the next round of training. This process is repeated for a specified number of steps.
 For test with J value(number of local steps) we set up a budget of 8000 for cifar and 2000 for shakespeare. This means that the total number of local steps multiplied by number of  global rounds should not exceed the budget.
+
 \subsection{heterogeneity}
 To replicate the heterogeneity of real-world federated learning scenarios, we introduced heterogenity by limiting the number of classes per client.
 The parameter Nc indicates the number of classes assigned to each client. For Cifar we used class of the images to do the split , for shakespeare we created a custom dataset where class is a character of a play , so we assigned togheder also same characters from different plays. 
