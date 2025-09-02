@@ -7,5 +7,14 @@ after doing so to install dependencies it's enough to write:
 poetry install in the parent directory 
 To run the code in vscode , use the Jupyter extension and click run all or run only a section of the code
 
-Always mode to the directory of the code you want to run before doing so
-to move into the code directory it's enough to write in the terminal cd./{directory_name}
+Always move to the directory there there is the code you want to run before doing so
+to move into the code directory it's enough to write in the terminal cd ./Cifar_100_Federated to move in the  Cifar_100_Federated  directory.
+Directory with code are :
+Cifar_100_Baseline
+Cifar_100_Federated
+Shakespeare_Baseline
+Shakespeare_Baseline
+/TODO add personal contribution 
+
+
+Also to show the graph the relative code is in the 'graph' directory 
