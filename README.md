@@ -1,6 +1,6 @@
 # AML_project_5
 
-## Instructions to Run the Code
+
 
 This project is organized into **6 main folders**, each containing different parts of the code.  
 
@@ -14,7 +14,7 @@ poetry install
 
 This will install all required dependencies.
 
-
+### 2. Run code
 
 To run the code use VS Code with the Jupyter extension.
 
@@ -28,7 +28,7 @@ Always make sure you are in the correct directory before running a notebook. For
 cd ./Cifar_100_Federated
 This command moves you into the Cifar_100_Federated directory.
 
-
+### 3. project structure
 
 The main code directories are:
 
