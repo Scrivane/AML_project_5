@@ -15,6 +15,8 @@ Cifar_100_Federated
 Shakespeare_Baseline
 Shakespeare_Baseline
 /TODO add personal contribution 
+All the file .pynb are runnable notebook .
+In those directory there are also log of old runs , used also to do the summary graphs .
 
 
 Also to show the graph the relative code is in the 'graph' directory 
