@@ -32,13 +32,13 @@ This command moves you into the Cifar_100_Federated directory.
 
 The main code directories are:
 
-Cifar_100_Baseline
+Cifar_100_Baseline (contains baseline_cifar_search_best_scheduler used for param search  and baseline_cifar_search_best_scheduler to test different schedulers  )
 
-Cifar_100_Federated
+Cifar_100_Federated (contains Heterogeneous_checkpoints_federated to run test in a federated setting with different shardings, J values and different levels of skewness )
 
-Shakespeare_Baseline
+Shakespeare_Baseline (contains federated baseline SHAKESPEARE config search (final) for param search  and federated_baseline_best_scheduler to test different schedulers  )
 
-Shakespeare_Federated
+Shakespeare_Federated ( contains Shakespeare_iid_and_non_iid_final to run test in a federated setting with different shardings, J values and different levels of skewness)
 
 graph  (which contains scripts to generate summary graphs)
 
