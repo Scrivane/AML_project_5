@@ -1,5 +1,6 @@
 # CVPR 2022 Template
 
+
 This is the LaTeX template for IEEE/CVF CVPR 2022 submissions, rebuttals, and final versions.
 
 The last version of the CVPR/ICCV LaTeX template had been developed by Paolo.Ienne@di.epfl.ch and awf@acm.org about 15 years ago. That version suffered from several issues:

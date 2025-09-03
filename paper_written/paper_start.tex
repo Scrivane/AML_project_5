@@ -97,9 +97,67 @@ The first contribution studies minibatch probing as a mechanism to estimate the 
 The second contribution introduces a Diversity Score Sampling to limit redundant updates from clients with similar data. We define a diversity score that combines intra-client diversity (label coverage and distribution balance) with inter-client diversity (dissimilarity to other clients). This score favors clients whose participation provides novel information while reducing redundancy.
 
 
-
-\section{Placeholder}
+\section{Methodologies}
 \label{sec:formatting} 
+\subsection{Datasets}
+We use two datasets to evaluate our methods: CIFAR-100 and Shakespeare.
+CIFAR-100 \cite{Paper01} is an image classification dataset consisting of 60,000 32x32 color images in 100 classes, with 600 images.
+Shakespeare \cite{Paper02} is a text dataset derived from the works of Shakespeare, used for next-character prediction tasks. Each sample is comprised of a text of 80 characters (x), a next character (y) and a label which contains info about the play title and the character name that is telling the line .
+\subsection{Splits}
+In CIFAR-100 examples are already split between train(50000 samples) and test(10000 samples). To get the validation set we randomly sampled 5000 samples from the training set.
+ We ended up with 45000 samples for training, 5000 for validation and 10000 for testing.
+In Shakespeare, we split using 90\% of the samples for training, 5\% for validation, and 5\% for testing.  
+\subsection{Baseline}
+We implemented a centralized baseline model for both datasets in order to provide a performance
+ reference. 
+For CIFAR-100, we adopted a convolutional neural network inspired by the LeNet architecture. 
+The model consists of two convolutional layers with ReLU activations and max-pooling operations,
+ followed by three fully connected layers. The final layer outputs logits over the 100 classes.
+  This network is trained on the full CIFAR-100 training set using standard supervised learning.
+
+For the Shakespeare dataset, we employed a character-level recurrent neural network based on an
+ LSTM. The model includes an embedding layer, a stacked LSTM with dropout regularization, 
+ and a fully connected output layer projecting to the vocabulary size. The network predicts 
+ the next character given a sequence of input characters. 
+ Training is carried out using cross-entropy loss with stochastic gradient descent 
+ and a cosine annealing learning rate schedule. To improve efficiency, we make use of 
+ PyTorch’s \texttt{torch.compile} feature and mixed-precision training.
+
+
+
+\subsection{FedAvg}
+For federated learning we used FedAvg \cite{Paper03} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients (in case 10\% of them ). Each client trains the model on its local data for a few steps and sends the updated model back to the server.
+The server then aggregates the updates by averaging to form a new global model, which is sent back to the clients for the next round of training. This process is repeated for a specified number of steps.
+For test with J value(number of local steps) we set up a budget of 8000 for cifar and 2000 for shakespeare. This means that the total number of local steps multiplied by number of  global rounds should not exceed the budget.
+
+\subsection{heterogeneity}
+To replicate the heterogeneity of real-world federated learning scenarios, we introduced heterogenity by limiting the number of classes per client.
+The parameter Nc indicates the number of classes assigned to each client. For Cifar we used class of the images to do the split , for shakespeare we created a custom dataset where class is a character of a play , so we assigned togheder also same characters from different plays. 
+\subsection{Skeweness}
+To replicate real-world federated learning scenarios, we also analyzed the impact of skewed client participation.
+Using a Dirichlet distribution with parameter gamma, we generated non-uniform client participation probabilities. A smaller gamma value results in a more skewed distribution, where a few clients are selected more frequently than others.
+
+\section{Experiments}
+\subsection{Schedulers}
+
+We've tested different schedulers for the centralized baseline to find the one that gives the best performance.
+We tested StepLR, MultiStepLR, ReduceLROnPlateau, ExponentialLR, OneCycleLR,  CosineAnnealingLR and CosineAnnealingWarmRestarts.
+The best one turned out to be OneCycleLR for Cifar to get to a better result in few steps and also to get the best result at the end of 500 epochs.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{images/graph_cifar.png}
+\caption{Comparison between different schedulers on CIFAR dataset.}
+\label{fig:short-a}
+\end{figure}
+For Shakespeare the best one at the end of 50 rounds turned out to be ReduceLROnPlateau.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{images/graph_shakespeare.png}
+\caption{Comparison between different schedulers on Shakespeare dataset.}
+\label{fig:short-b}
+\end{figure}
+\section{Placeholder}
 \subsection{Paper length}
 Papers, excluding the references section, must be no longer than eight pages in length.
 The references section will not be included in the page count, and there is no limit on the length of the references section.

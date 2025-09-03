@@ -1,0 +1,206 @@
+
+Tier 1 — quick, high-impact (run first)
+
+These are small grids that tend to show big differences.
+
+Selection policy (probe/fairness/explore)
+
+beta_fairness ∈ {0.0, 0.3, 0.6}
+Why: 0 = pure probe, 0.3 = hybrid, 0.6 = strong fairness.
+
+epsilon ∈ {0.05, 0.1, 0.2}
+Why: controls how many slots are pure exploration.
+
+temp ∈ {0.3, 0.7}
+Why: lower temp → peakier explore prob.
+
+
+
+Runs
+
+
+
+Folder 00 005 03 
+
+beta_fairness = 0.00 
+epsilon = 0.05
+temp = 0.3
+
+[sampled_uniform | J=4] Round 390/400 Time=43.0s | ProbeNorms=0.2859/0.3494/0.6177 | Local Acc=0.942±0.056 | Val Acc=0.392 | Test Acc=0.415
+
+
+----------------------
+
+
+
+Folder 03 005 03
+
+beta_fairness = 0.30 
+epsilon = 0.05
+temp = 0.3
+
+[sampled_uniform | J=4] Round 358/400 Time=45.5s | ProbeNorms=0.2443/0.3285/0.5394 | Local Acc=0.927±0.055 | Val Acc=0.408 | Test Acc=0.441
+
+
+-----------------------
+
+
+
+Folder 06 005 03
+
+beta_fairness = 0.6 
+epsilon = 0.05
+temp = 0.3
+
+
+[sampled_uniform | J=4] Round 391/400 Time=39.1s | ProbeNorms=0.2045/0.3327/0.7922 | Local Acc=0.923±0.026 | Val Acc=0.403 | Test Acc=0.431
+
+
+
+---------------------
+
+Folder 00 01 03
+
+no
+
+---------------------
+
+
+Folder 03 01 03
+
+yes OPERA
+
+beta_fairness = 0.3 
+epsilon = 0.1
+temp = 0.3
+
+[sampled_uniform | J=4] Round 386/400 Time=40.2s | ProbeNorms=0.2331/0.3426/0.6925 | Local Acc=0.933±0.043 | Val Acc=0.398 | Test Acc=0.437
+
+
+
+
+---------------------
+
+Folder 06 01 03
+
+maybe
+
+---------------------
+
+Folder 00 02 03
+
+no
+
+---------------------
+
+Folder 03 02 03
+
+yes BRAVE
+
+beta_fairness = 0.3 
+epsilon = 0.2
+temp = 0.3
+
+[sampled_uniform | J=4] Round 397/400 Time=38.6s | ProbeNorms=0.2266/0.3155/0.4286 | Local Acc=0.943±0.037 | Val Acc=0.409 | Test Acc=0.440
+
+
+
+
+---------------------
+
+Folder 06 02 03
+
+maybe
+
+---------------------
+
+
+
+
+
+
+
+
+Folder 00 005 07 
+
+no
+
+---------------------
+
+Folder 03 005 07
+
+yes
+
+beta_fairness = 0.3 
+epsilon = 0.05
+temp = 0.7
+
+chrome oncognito
+
+[sampled_uniform | J=4] Round 397/400 Time=40.3s | ProbeNorms=0.2319/0.3130/0.5189 | Local Acc=0.935±0.034 | Val Acc=0.404 | Test Acc=0.437
+
+
+
+---------------------
+
+Folder 06 005 07
+
+maybe
+
+---------------------
+
+Folder 00 01 07
+
+no
+
+---------------------
+
+Folder 03 01 07
+
+yes
+
+beta_fairness = 0.3 
+epsilon = 0.1
+temp = 0.7
+
+opera incognito
+
+[sampled_uniform | J=4] Round 400/400 Time=38.9s | ProbeNorms=0.2121/0.3195/0.7258 | Local Acc=0.918±0.033 | Val Acc=0.402 | Test Acc=0.442
+
+
+
+---------------------
+
+Folder 06 01 07
+
+maybe
+
+---------------------
+
+Folder 00 02 07
+
+no
+
+---------------------
+
+Folder 03 02 07
+
+yes
+
+edge
+
+beta_fairness = 0.3 
+epsilon = 0.2
+temp = 0.7
+
+[sampled_uniform | J=4] Round 343/400 Time=42.7s | ProbeNorms=0.2188/0.3206/0.6240 | Local Acc=0.912±0.030 | Val Acc=0.405 | Test Acc=0.432
+
+
+
+---------------------
+
+Folder 06 02 07
+
+maybe
+
+
