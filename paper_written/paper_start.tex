@@ -110,10 +110,9 @@ In Shakespeare, we split using 90\% of the samples for training, 5\% for validat
 \subsection{Baseline}
 We implemented a centralized baseline model for both datasets in order to provide a performance
  reference. 
-For CIFAR-100, we adopted a convolutional neural network inspired by the LeNet architecture. 
-The model consists of two convolutional layers with ReLU activations and max-pooling operations,
+For CIFAR-100, we adopted a convolutional neural network inspired by the LeNet architecture consisting in two convolutional layers with ReLU activations and max-pooling operations,
  followed by three fully connected layers. The final layer outputs logits over the 100 classes.
-For the Shakespeare dataset, we employed a character-level recurrent neural network. The model consists of an embedding layer, a two-layer Long Short-Term Memory(LSTM) with dropout, and a linear output layer with output dimension equal to the vocabulary size. Given a sequence of characters, it predicts the next character at the sequence end.
+For the Shakespeare dataset, we employed a character-level recurrent neural network which consists of an embedding layer, a two-layer Long Short-Term Memory(LSTM) with dropout, and a linear output layer with output dimension equal to the vocabulary size. Given a sequence of characters, it predicts the next character at the sequence end.
 
  Training on CIFAR  and on Shakespeare was performed using cross-entropy loss and stochastic gradient descent,
 updating parameters via backpropagation .
