@@ -87,6 +87,19 @@ The first contribution studies minibatch probing as a mechanism to estimate the 
 The second contribution introduces a Diversity Score Sampling to limit redundant updates from clients with similar data. We define a diversity score that combines intra-client diversity (label coverage and distribution balance) with inter-client diversity (dissimilarity to other clients). This score favors clients whose participation provides novel information while reducing redundancy.
 
 
+
+
+
+\section{Conclision}
+
+
+This paper provided studies on minibatch probing as a mechanism to estimate the near-term impact of candidate clients. Probing identifies clients that are likely to produce large, informative updates, thereby accelerating convergence. However we saw that a purely probe-driven top-k selection tends to starve “weak” clients. To counter this, we introduced a probe + fairness hybrid, blending probe utility with fairness-aware scheduling that tracks participation frequency and recency. This ensures that all clients (also those with limited or skewed data) remain represented in training, balancing short-term efficiency with long-term equity.
+The second contribution, instead, introduced a Diversity Score Sampling to limit redundant updates from clients with similar data. We defined a diversity score that combines intra-client diversity (label coverage and distribution balance) with inter-client diversity (dissimilarity to other clients). This score favors clients whose participation provided novel information while reducing redundancy.
+By this 2 contributions we tackled the challenges of statistical heterogeneity and skewed participation in federated learning, improving convergence and model performance.
+
+
+
+
 \section{Methodologies}
 \label{sec:formatting} 
 \subsection{Datasets}
