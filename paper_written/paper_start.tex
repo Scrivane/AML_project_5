@@ -137,8 +137,32 @@ The parameter Nc indicates the number of classes assigned to each client. For Ci
 To replicate real-world federated learning scenarios, we also analyzed the impact of skewed client participation.
 Using a Dirichlet distribution with parameter gamma, we generated non-uniform client participation probabilities. A smaller gamma value results in a more skewed distribution, where a few clients are selected more frequently than others.
 
+\section{experiments}
+\subsection{schedulers}
+\begin{figure*}[ht]
+  \centering
+  % First subfigure
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{images/graph_cifar.png}
+    \caption{Comparison between different schedulers on CIFAR dataset.}
+    \label{fig:short-a}
+  \end{subfigure}
+  \hfill
+  % Second subfigure
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{images/graph_shakespeare.png}
+    \caption{Comparison between different schedulers on Shakespeare dataset.}
+    \label{fig:short-b}
+  \end{subfigure}
 
+  \caption{Scheduler comparison on CIFAR and Shakespeare datasets.}
+  \label{fig:short}
+\end{figure*}
 
+We've tested different schedulers for the centralized baseline to find the one that gives the best performance.
+We tested StepLR, MultiStepLR, ReduceLROnPlateau, ExponentialLR, OneCycleLR,  CosineAnnealingLR and CosineAnnealingWarmRestarts.
+The best one turned out to be OneCycleLR for Cifar to get to a better result in few steps and also to get the best result at the end of 500 epochs.
+For Shakespeare the best one at the end of 50 rounds turned out to be ReduceLROnPlateau.
 \section{Placeholder}
 \subsection{Paper length}
 Papers, excluding the references section, must be no longer than eight pages in length.
