@@ -16,7 +16,7 @@ This will install all required dependencies.
 
 ### 2. Run code
 
-To run the code use VS Code with the Jupyter extension.
+To run the code locally use VS Code with the Jupyter extension.
 
 Open the desired notebook (.ipynb) and either:
 
@@ -27,6 +27,8 @@ Run specific sections as needed.
 Always make sure you are in the correct directory before running a notebook. For example:
 cd ./Cifar_100_Federated
 This command moves you into the Cifar_100_Federated directory.
+
+Personal contribution code can be run only on  [Google Colab](https://colab.research.google.com) .
 
 ### 3. project structure
 
