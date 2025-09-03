@@ -136,7 +136,7 @@ Using a Dirichlet distribution with parameter gamma, we generated non-uniform cl
 \subsection{Schedulers}
 
 We've tested different schedulers for the centralized baseline to find the one that gives the best performance.
-We tested StepLR, MultiStepLR, ReduceLROnPlateau, ExponentialLR, OneCycleLR,  CosineAnnealingLR and CosineAnnealingWarmRestarts.
+We tested StepLR, MultiStepLR, ReduceLROnPlateau, ExponentialLR, OneCycleLR,  CosineAnnealingLR and CosineAnnealingWarmRestarts, each one set up with reasonable parameters that can be found in the code .
 The best one turned out to be OneCycleLR for Cifar to get to a better result in few steps and also to get the best result at the end of 500 epochs.
 \begin{figure}[h]
 \centering
