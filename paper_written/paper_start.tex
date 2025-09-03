@@ -5,8 +5,8 @@
 \documentclass[10pt,twocolumn,letterpaper]{article}
 
 %%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
-\usepackage[review]{cvpr}      % To produce the REVIEW version
-%\usepackage{cvpr}              % To produce the CAMERA-READY version
+%\usepackage[review]{cvpr}      % To produce the REVIEW version
+\usepackage{cvpr}              % To produce the CAMERA-READY version
 %\usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
 
 % Include other packages here, before hyperref.
@@ -47,20 +47,10 @@
 %%%%%%%%% TITLE - PLEASE UPDATE
 \title{\LaTeX\ Author Guidelines for \confName~Proceedings}
 
-\author{First Author\\
-Institution1\\
-Institution1 address\\
-{\tt\small firstauthor@i1.org}
-% For a paper whose authors are all at the same institution,
-% omit the following lines up until the closing ``}''.
-% Additional authors and addresses can be added with ``\and'',
-% just like the second author.
-% To save space, use either the email address or home page, not both
-\and
-Second Author\\
-Institution2\\
-First line of institution2 address\\
-{\tt\small secondauthor@i2.org}
+\author{
+Adriano De Cesare (matricola: s333044)\\
+Mattia Cappellino (matricola: s327277)\\
+Alessia Bevilaqua (matricola: s327984)\\
 }
 \maketitle
 
@@ -101,15 +91,27 @@ The second contribution introduces a Diversity Score Sampling to limit redundant
 \label{sec:formatting} 
 \subsection{Datasets}
 We use two datasets to evaluate our methods: CIFAR-100 and Shakespeare.
-CIFAR-100 \cite{Paper01} is an image classification dataset consisting of 60,000 32x32 color images in 100 classes, with 600 images.
-Shakespeare \cite{Paper02} is a text dataset derived from the works of Shakespeare, used for next-character prediction tasks. Each sample is comprised of a text of 80 characters (x), a next character (y) and a label which contains info about the play title and the character name that is telling the line .
+CIFAR-100 \cite{Cifar} is an image classification dataset consisting of 60,000 32x32 color images in 100 classes, with 600 images.
+Shakespeare \cite{Shakespeare} is a text dataset derived from the works of Shakespeare, used for next-character prediction tasks. Each sample is comprised of a text of 80 characters (x), a next character (y) and a label which contains info about the play title and the character name that is telling the line .
 \subsection{Splits}
 In CIFAR-100 examples are already split between train(50000 samples) and test(10000 samples). To get the validation set we randomly sampled 5000 samples from the training set.
  We ended up with 45000 samples for training, 5000 for validation and 10000 for testing.
 In Shakespeare, we split using 90\% of the samples for training, 5\% for validation, and 5\% for testing.  
+\subsection{Baseline}
+We implemented a centralized baseline model for both datasets in order to provide a performance
+ reference. 
+For CIFAR-100, we adopted a convolutional neural network inspired by the LeNet architecture consisting in two convolutional layers with ReLU activations and max-pooling operations,
+ followed by three fully connected layers. The final layer outputs logits over the 100 classes.
+For the Shakespeare dataset, we employed a character-level recurrent neural network which consists of an embedding layer, a two-layer Long Short-Term Memory(LSTM) with dropout, and a linear output layer with output dimension equal to the vocabulary size. Given a sequence of characters, it predicts the next character at the sequence end.
+
+ Training on CIFAR  and on Shakespeare was performed using cross-entropy loss and stochastic gradient descent,
+updating parameters via backpropagation .
+
+
+
 
 \subsection{FedAvg}
-For federated learning we used FedAvg \cite{Paper03} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients (in case 10\% of them ). Each client trains the model on its local data for a few steps and sends the updated model back to the server.
+For federated learning we used FedAvg \cite{Paper10} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients (in case 10\% of them ).In our case we considered we had 100 clients. Each client trains the model on its local data for a few steps and sends the updated model back to the server.
 The server then aggregates the updates by averaging to form a new global model, which is sent back to the clients for the next round of training. This process is repeated for a specified number of steps.
 For test with J value(number of local steps) we set up a budget of 8000 for cifar and 2000 for shakespeare. This means that the total number of local steps multiplied by number of  global rounds should not exceed the budget.
 
@@ -120,8 +122,27 @@ The parameter Nc indicates the number of classes assigned to each client. For Ci
 To replicate real-world federated learning scenarios, we also analyzed the impact of skewed client participation.
 Using a Dirichlet distribution with parameter gamma, we generated non-uniform client participation probabilities. A smaller gamma value results in a more skewed distribution, where a few clients are selected more frequently than others.
 
+\section{Experiments}
+\subsection{Schedulers}
 
+We've tested different schedulers for the centralized baseline to find the one that gives the best performance.
+We tested StepLR, MultiStepLR, ReduceLROnPlateau, ExponentialLR, OneCycleLR,  CosineAnnealingLR and CosineAnnealingWarmRestarts, each one set up with reasonable parameters that can be found in the code .
+The best one turned out to be OneCycleLR for Cifar to get to a better result in few steps and also to get the best result at the end of 500 epochs.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{images/graph_cifar.png}
+\caption{Comparison between different schedulers on CIFAR dataset.}
+\label{fig:short-a}
+\end{figure}
+For Shakespeare the best one after 50 rounds turned out to be ReduceLROnPlateau.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{images/graph_shakespeare.png}
+\caption{Comparison between different schedulers on Shakespeare dataset.}
+\label{fig:short-b}
+\end{figure}
+There isn't a big difference between different schedulers max accuracy anyway , max difference is around 1\% for shakespeare and 5\% for cifar.
 \section{Placeholder}
 \subsection{Paper length}
 Papers, excluding the references section, must be no longer than eight pages in length.
