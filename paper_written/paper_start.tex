@@ -93,12 +93,16 @@ The second contribution introduces a Diversity Score Sampling to limit redundant
 \section{Conclision}
 
 
-This paper provided studies on minibatch probing as a mechanism to estimate the near-term impact of candidate clients. Probing identifies clients that are likely to produce large, informative updates, thereby accelerating convergence. However we saw that a purely probe-driven top-k selection tends to starve “weak” clients. To counter this, we introduced a probe + fairness hybrid, blending probe utility with fairness-aware scheduling that tracks participation frequency and recency. This ensures that all clients (also those with limited or skewed data) remain represented in training, balancing short-term efficiency with long-term equity.
-The second contribution, instead, introduced a Diversity Score Sampling to limit redundant updates from clients with similar data. We defined a diversity score that combines intra-client diversity (label coverage and distribution balance) with inter-client diversity (dissimilarity to other clients). This score favors clients whose participation provided novel information while reducing redundancy.
-By this 2 contributions we tackled the challenges of statistical heterogeneity and skewed participation in federated learning, improving convergence and model performance.
-
-
-
+We addressed client participation in federated learning with
+ two different strategies. First, we introduced minibatch
+  probing to identify clients likely to produce informative updates,
+   combined with a probe + fairness hybrid to prevent weaker clients
+    from being excluded and to balance efficiency with equity.
+     Second, we proposed Diversity Score Sampling, which promotes
+      clients contributing novel information by considering both 
+      intra- and inter-client diversity, thereby reducing redundancy 
+      in updates. Both these approaches improve convergence 
+      while ensuring fair and diverse client participation.
 
 \section{Methodologies}
 \label{sec:formatting} 
