@@ -121,7 +121,7 @@ updating parameters via backpropagation .
 
 
 \subsection{FedAvg}
-For federated learning we used FedAvg \cite{Paper10} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients (in case 10\% of them ). Each client trains the model on its local data for a few steps and sends the updated model back to the server.
+For federated learning we used FedAvg \cite{Paper10} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients (in case 10\% of them ).In our case we considered we had 100 clients. Each client trains the model on its local data for a few steps and sends the updated model back to the server.
 The server then aggregates the updates by averaging to form a new global model, which is sent back to the clients for the next round of training. This process is repeated for a specified number of steps.
 For test with J value(number of local steps) we set up a budget of 8000 for cifar and 2000 for shakespeare. This means that the total number of local steps multiplied by number of  global rounds should not exceed the budget.
 
