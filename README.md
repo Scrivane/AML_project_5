@@ -44,7 +44,9 @@ Shakespeare_Federated ( contains Shakespeare_iid_and_non_iid_final.ipynb to run 
 
 graph  (which contains scripts to generate summary graphs)
 
-/TODO → reserved for personal contributions
+personal_contribution_Diversity_Score_sampling (which contains a personal contribution and can be run only on colab )
+
+personal_contribution_Client_selection_under_variable_client_heterogeneity ( which contains the other  personal contribution and can be run only on colab )
 
 Each folder contains:
 
