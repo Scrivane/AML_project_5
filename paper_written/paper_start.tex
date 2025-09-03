@@ -107,6 +107,23 @@ Shakespeare \cite{Paper02} is a text dataset derived from the works of Shakespea
 In CIFAR-100 examples are already split between train(50000 samples) and test(10000 samples). To get the validation set we randomly sampled 5000 samples from the training set.
  We ended up with 45000 samples for training, 5000 for validation and 10000 for testing.
 In Shakespeare, we split using 90\% of the samples for training, 5\% for validation, and 5\% for testing.  
+\subsection{Baseline}
+We implemented a centralized baseline model for both datasets in order to provide a performance
+ reference. 
+For CIFAR-100, we adopted a convolutional neural network inspired by the LeNet architecture. 
+The model consists of two convolutional layers with ReLU activations and max-pooling operations,
+ followed by three fully connected layers. The final layer outputs logits over the 100 classes.
+  This network is trained on the full CIFAR-100 training set using standard supervised learning.
+
+For the Shakespeare dataset, we employed a character-level recurrent neural network based on an
+ LSTM. The model includes an embedding layer, a stacked LSTM with dropout regularization, 
+ and a fully connected output layer projecting to the vocabulary size. The network predicts 
+ the next character given a sequence of input characters. 
+ Training is carried out using cross-entropy loss with stochastic gradient descent 
+ and a cosine annealing learning rate schedule. To improve efficiency, we make use of 
+ PyTorch’s \texttt{torch.compile} feature and mixed-precision training.
+
+
 
 \subsection{FedAvg}
 For federated learning we used FedAvg \cite{Paper03} .It consists of a server and multiple clients. The server initializes a global model and sends it to a subset of clients (in case 10\% of them ). Each client trains the model on its local data for a few steps and sends the updated model back to the server.
