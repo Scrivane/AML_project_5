@@ -1,0 +1,86 @@
+PRESENTAZIONE SCHEMA
+
+
+circa 20 max 25 slides, 20 ideale
+
+
+10 intro + modello + experiments
+
+
+
+5 presonal 1
+
+5 personal 2
+
+
+
+
+
+
+
+10 introd
+
+1 titolo + matricole
+
+2 decrizione federated (che cos è il federated + rischi e cos è difficile fare + cos è importante)
+
+
+
+
+
+1 slide modello (fedavg )
+
+1 slide dataset => charlstm, lenet
+
+
+
+1 slide risultati baseline (fedavg) (menzione scheduler, no spiegazione) abbiamo provato x scheduler, questo è il migliore
+
+
+
+1 slide descrizione NC (non algoritmo, solo cos'è iid e non iid partitioning)
+
+1 slide risultati NC e parametri (NC 50, 10, ...)
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+1 slide descrizione gamma (non algoritmo, solo cos'è skewed e non non skewed)
+
+1 slide risultati gamma e parametri (NC 50, 10, ...)
+
+
+
+
+5 presonal 1
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+
+5 personal 2
+
+
+
+schema personal generico
+
+1 slide descrizione problema + cosa vogliamo fare
+
+1 descrizione PARAMETRI e splitting client descrizione ambiente (fa solo il primo)
+
+1 o 2 slide formule e spiegazione di cosa fanno
+
+1 slide grafici + conclusioni
+
+
+
+
+
+1 conclusione
+
+1 ringraziamenti?
+
+
+
