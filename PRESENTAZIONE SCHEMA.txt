@@ -48,12 +48,99 @@ circa 20 max 25 slides, 20 ideale
 
 1 slide descrizione gamma (non algoritmo, solo cos'è skewed e non non skewed)
 
+client selection is the main topic:
+
+uniform participation: each client has the same probability of being selected at each round.
+    more stable model and updates
+
+skewed participation: each client has a different probability of being selected at each round.
+    unstable model and updates depending on the client data distribution.
+
+    gamma values of 0.01, 0.1, 0.5, 1.0, 10.0
+
+
+
 1 slide risultati gamma e parametri (NC 50, 10, ...)
 
 
 
 
 5 presonal 1
+
+
+schema personal generico
+
+1 slide descrizione problema + cosa vogliamo fare
+
+Federated environment likes uniform client participation and local data heterogeneity, but this in not always possible in reality
+
+=> (2 arrows pointing down)
+
+probe + fairness hybrid selection
+
+probe clients to see how much they can contribute to the model + fairness selection (anti starvation for weak clients)
+
+
+diversity score selection
+
+=>
+
+quantify intra and extra client information for better client selection
+
+
+
+
+
+
+1 descrizione PARAMETRI e splitting client descrizione ambiente (fa solo il primo)
+
+cifar 100 data split
+
+fedavg model and fedprox model
+How they relate to your project (what you're actually doing)
+
+In your code you intentionally run a hybrid: some selected clients (those for which you reuse the probe model) continue training with plain SGD (FedAvg-style), while others (those that start from the global snapshot) use the FedProx objective.
+
+This hybrid yields two practical outcomes:
+
+Probe-reused clients behave like FedAvg (they send larger, unconstrained deltas — good for fast short-term progress when probes are predictive).
+
+Non-reused clients behave like FedProx (they are regularized toward the global model, reducing drift).
+
+The hybrid is a deliberate trade-off: reuse makes probes predictive and saves compute, while FedProx on other clients stabilizes training for those that would otherwise drift.
+
+
+1 o 2 slide formule e spiegazione di cosa fanno 
+
+
+
+1 slide grafici + conclusioni
+
+
+
+TIME TABLE (total 5 - 6 min)
+
+gamma 1         45 seconds
+
+gamma 2         30 seconds
+
+
+
+
+personal 1      30 sec
+
+personal 2      45 sec
+
+personal 3      45 sec
+
+personal 4      45 sec
+
+personal 5      30 sec
+
+personal 6      30 sec
+
+
+
 
 
 ------------------------------------------------------------------------------------------------------------

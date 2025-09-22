@@ -1,0 +1,64 @@
+slide 11	45
+Now for the section of impact of client participation
+we have uniform participation and skewed participation
+
+in uniform participation we have the same selection probabilty for each client. This results in easier and smoother model updates
+and in skewed participation we have different selection probability for each client. This results in model updates being more dependent on the selected client data.
+
+We used gamma values of 0.01, 0.1, 0.5, 1.0 and 10.0.
+In general, the smaller the gamma, the more extreme the skew, the bigger the gamma, the more uniform the client selection probability is
+
+slide 12	30
+We can see that clients with a higher gamma are slightly better than clients with a smaller gamma, bot in accuracy and it's slightly more apparent in the loss, but it's a very small difference.
+
+This happens because the data is equally distributed in the clients, so each client has very similar data inside and so the difference is not that big.
+with different data classes or quantity in each client it should be much higher.
+
+
+slide 13	30
+Now before introducing our personal contributions we look at some federated learning challenges. 
+The first is client participation: usually clients dont participate the same amount
+we then have local data heterogeneity: client have different data (both in quality and quantity) stored inside
+and lastly model drift: model updates can be inconsistent depending on the data the clients are providing.
+
+
+slide 14 	45
+We made 2 personal contributions:
+a probe + fairness hybrid selection and a diversity score selection
+
+In the first one we are probing clients to choose the best contributors for the model and we use fairness selection to avoid starving weak clients
+
+and in the second one we select clients based on internal and external information to update the model
+
+both are done on cifar 100 dataset
+
+slide 15	45
+For the probe + fairness hybrid selection
+
+for both our personal contribution parts we are using 1 to 50 classes per each client (same quantity of samples, just from more classes)
+
+we use local minibatches for each client to select only the most informative ones 
+
+and we use fedavg and fedprox to balance large updates and avoid local drift
+
+
+slide 16	30
+we run a tiny probe on the minibatches every round to produce a value that estimates how big the update on the model is for that client.
+
+we also use a fairness score and a recency score for each candidate to avoid starving weak clients. 
+
+these scores are combined and we use the alfa to trade speed for equity
+
+
+slide 17	30
+we can see that with a bigger alfa (here called beta fairness) the algorithm is more fair, and since weaker clients are not starved, the algorithm reaches better accuracies and loss values.
+
+
+slide 18	30
+we compare for 400 rounds our result and we can see that we are scoring better that even the iid version. 
+Please remember that our average number of classes per clients in our personal contribution is around 20 - 25, and there is a huge difference at 400 rounds between both nc equal 50 or 10.
+The final accuracy values for NC equal 50 are roughly 45% , so already at 400 rounds in our personal contribution we are reaching them
+
+
+
+
